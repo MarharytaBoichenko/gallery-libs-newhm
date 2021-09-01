@@ -1,7 +1,7 @@
 {
-  "name": "parcel-1.12.5-lite",
+  "name": "gallery-libs-newhm",
   "version": "1.0.0",
-  "description": "Сборка Parcel 1.12.5",
+  "description": "gallery-libs-newhm",
   "main": "index.js",
   "scripts": {
     "dev": "parcel src/index.html",
@@ -24,7 +24,8 @@
     "gh-pages": "^3.2.3",
     "handlebars": "^4.7.7",
     "joi": "^17.4.2",
-    "shortid": "^2.2.16"
+    "shortid": "^2.2.16",
+    "simplelightbox": "^2.8.0"
   },
   "devDependencies": {
     "parcel-bundler": "^1.12.5",

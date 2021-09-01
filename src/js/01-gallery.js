@@ -17,8 +17,8 @@ function  createMarkup(gallery){
   <a class="gallery__link" href="large-image.jpg">
     <img
       class="gallery__image"
-      src="${preview}"
-      data-source="${original}"
+      src=${preview}
+      data-source=${original}
       alt="${description}"
     />
   </a>
@@ -28,19 +28,29 @@ function  createMarkup(gallery){
 };
 console.log(galleryMarkup);
 
-// galleryList.addEventListener("click", onModalClick);
+galleryList.addEventListener("click", onModalClick);
 
-// function onModalClick(e) {
-//     console.log(e);
-//     e.preventDefault();
-//     if (e.target.nodeName !== "IMG") {
-//     return;
-//     } 
-    
-// }
+function onModalClick(e) {
+  console.log(e);
+  console.log(e.target);
+  console.log(e.target.nodeName);
+    e.preventDefault();
+    if (e.target.nodeName !== "IMG") {
+    return;
+    } 
+ 
+    const instance = basicLightbox.create(`
+<div class = modal>
+<img src=${e.target.dataset.source} alt=${e.target.alt}/>
+</div>
+`);
+console.log(instance);
+  instance.show();
 
-// const instance = basicLightbox.create(`
-// 	<h1>Dynamic Content</h1>
-// 	<p>You can set the content of the lightbox with JS.</p>
-// `);
-// console.log(instance);
+  window.addEventListener("keydown", (e) => {
+    if (e.code === "Escape") {
+      instance.close()
+    }
+  });
+
+}
