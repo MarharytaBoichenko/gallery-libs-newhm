@@ -1,0 +1,49 @@
+{
+  "name": "parcel-1.12.5-lite",
+  "version": "1.0.0",
+  "description": "Сборка Parcel 1.12.5",
+  "main": "index.js",
+  "scripts": {
+    "dev": "parcel src/index.html",
+    "build": "parcel build src/index.html --public-url /parcel-1.12.5-lite/",
+    "deploy": "gh-pages -d dist",
+    "predeploy": "npm run build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MarharytaBoichenko/gallery-libs-newhm.git"
+  },
+  "author": "Marharyta Boichenko ",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MarharytaBoichenko/gallery-libs-newhm/issues"
+  },
+  "homepage": "https://marharytaboichenko.github.io/gallery-libs-newhm",
+  "dependencies": {
+    "basiclightbox": "^5.0.4",
+    "gh-pages": "^3.2.3",
+    "handlebars": "^4.7.7",
+    "joi": "^17.4.2",
+    "shortid": "^2.2.16"
+  },
+  "devDependencies": {
+    "parcel-bundler": "^1.12.5",
+    "parcel-plugin-custom-dist-structure": "^1.1.18",
+    "parcel-plugin-handlebars-precompile": "^1.0.2",
+    "parcel-plugin-nuke-dist": "^1.0.1"
+  },
+  "customDistStructure": {
+    "config": {
+      ".css": "css",
+      ".js": "js",
+      "images": [
+        ".jpg",
+        ".svg",
+        ".png"
+      ]
+    },
+    "options": {
+      "development": true
+    }
+  }
+}
